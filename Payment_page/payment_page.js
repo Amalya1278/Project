@@ -4,19 +4,19 @@ function validateAndSubmit() {
     const cvv = document.getElementById('cvv').value;
     const Code = document.getElementById('Code').value;
 
-    //stugenk vor dashtery datark chlinen
+    //check for empty fields
     if (cardNumber === '' || date === '' || cvv === '' || Code === '') {
         alert('Fields are empty');
         return;
     }
-    //stugenk vor qarti tvery linen valid
+    //check for appropriate card number
     const Validcard = /^(?:\d{15}|\d{16})$/.test(cardNumber);
     if (!Validcard) {
         alert('Enter appropriate card number');
         return;
     }
     const Validdate = /^(0[1-9]|1[0-2])\/\d{4}$/;
-    //stugenk vor amsativy lini valid
+    //check for appropriate date
     if (!Validdate.test(date)) {
         alert('Enter appropriate date dd/mm/yy');
         return;
